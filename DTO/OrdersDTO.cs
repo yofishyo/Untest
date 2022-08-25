@@ -6,23 +6,36 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    /// <summary>
+    /// 訂單
+    /// </summary>
     public class OrdersDTO
     {
         public int OrderID { get; set; }
         public string CustomerID { get; set; }
-        public Nullable<int> EmployeeID { get; set; }
-        public Nullable<System.DateTime> OrderDate { get; set; }
-        public Nullable<System.DateTime> RequiredDate { get; set; }
-        public Nullable<System.DateTime> ShippedDate { get; set; }
-        public Nullable<int> ShipVia { get; set; }
-        public Nullable<decimal> Freight { get; set; }
-        public string ShipName { get; set; }
-        public string ShipAddress { get; set; }
-        public string ShipCity { get; set; }
-        public string ShipRegion { get; set; }
-        public string ShipPostalCode { get; set; }
-        public string ShipCountry { get; set; }
+        //public Nullable<int> EmployeeID { get; set; }
 
-        public  CustomersDTO Customers { get; set; }
+        /// <summary>
+        /// 訂購日期
+        /// </summary>
+        public Nullable<System.DateTime> OrderDate { get; set; }
+        /// <summary>
+        /// 發貨日期
+        /// </summary>
+        public Nullable<System.DateTime> ShippedDate { get; set; }
+        /// <summary>
+        /// 發貨商
+        /// </summary>
+        public string ShipName { get; set; }
+        /// <summary>
+        /// 發貨地址
+        /// </summary>
+        public string ShipAddress { get; set; }
+        /// <summary>
+        /// 發貨地址(城市)
+        /// </summary>
+        public string ShipCity { get; set; }
+
+        //public  CustomersDTO Customers { get; set; }
     }
 }

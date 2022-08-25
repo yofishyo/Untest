@@ -11,10 +11,10 @@ namespace DTO
     /// </summary>
     public class CustomersDTO
     {
-        //public CustomersDTO()
-        //{
-        //    this.Orders = new HashSet<OrdersDTO>();
-        //}
+        public CustomersDTO()
+        {
+            this.Orders = new HashSet<OrdersDTO>();
+        }
 
         /// <summary>
         /// 編客ID
@@ -31,7 +31,9 @@ namespace DTO
         /// </summary>
         public string ContactName { get; set; }
 
-
+        /// <summary>
+        /// 聯絡人類型
+        /// </summary>
         public string ContactTitle { get; set; }
 
         /// <summary>
@@ -42,12 +44,10 @@ namespace DTO
         /// 縣市
         /// </summary>
         public string City { get; set; }
-        public string Region { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
-        public string Phone { get; set; }
-        public string Fax { get; set; }
-
-        //public ICollection<OrdersDTO> Orders { get; set; }
+        
+        /// <summary>
+        /// 訂單紀錄
+        /// </summary>
+        public ICollection<OrdersDTO> Orders { get; set; }
     }
 }

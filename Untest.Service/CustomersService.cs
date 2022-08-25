@@ -35,13 +35,19 @@ namespace Untest.Service
 
         public IEnumerable<CustomersDTO> GetList()
         {
-            var result = _dB.Customers.Select(x => new CustomersDTO
-            {
-                CustomerID = x.CustomerId,
-                CompanyName = x.CompanyName,
-                Address = x.Address,
-                City = x.City,
-            });
+            var result = _dB.Customers
+                .Select(x => new CustomersDTO
+                  {
+                      CustomerID = x.CustomerId,
+                      CompanyName = x.CompanyName,
+                      Address = x.Address,
+                      City = x.City,
+                      Orders=x.Orders.Select(o=> new OrdersDTO 
+                                                    {
+                                                        OrderID=o.OrderId,
+                                                        OrderDate=o.OrderDate,
+                                                    }).Take(3).ToList(),
+                  });
 
             return result;
         }
