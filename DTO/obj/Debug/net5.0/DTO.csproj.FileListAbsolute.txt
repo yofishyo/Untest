@@ -1,0 +1,12 @@
+D:\TestLab\Untest\DTO\bin\Debug\net5.0\DTO.deps.json
+D:\TestLab\Untest\DTO\bin\Debug\net5.0\DTO.dll
+D:\TestLab\Untest\DTO\bin\Debug\net5.0\DTO.pdb
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.csproj.AssemblyReference.cache
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.AssemblyInfoInputs.cache
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.AssemblyInfo.cs
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.csproj.CoreCompileInputs.cache
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.dll
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\DTO.pdb
+D:\TestLab\Untest\DTO\obj\Debug\net5.0\ref\DTO.dll
+D:\TestLab\Untest\DTO\bin\Debug\net5.0\ref\DTO.dll
