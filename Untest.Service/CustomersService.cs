@@ -28,6 +28,11 @@ namespace Untest.Service
                                     CompanyName = x.CompanyName,
                                     Address = x.Address,
                                     City = x.City,
+                                    Orders = x.Orders.Select(o => new OrdersDTO
+                                    {
+                                        OrderID = o.OrderId,
+                                        OrderDate = o.OrderDate,
+                                    }).Take(3).ToList(),
                                 }).FirstOrDefault();
 
             return result;
@@ -37,20 +42,32 @@ namespace Untest.Service
         {
             var result = _dB.Customers
                 .Select(x => new CustomersDTO
-                  {
-                      CustomerID = x.CustomerId,
-                      CompanyName = x.CompanyName,
-                      Address = x.Address,
-                      City = x.City,
-                      Orders=x.Orders.Select(o=> new OrdersDTO 
-                                                    {
-                                                        OrderID=o.OrderId,
-                                                        OrderDate=o.OrderDate,
-                                                    }).Take(3).ToList(),
-                  });
+                {
+                    CustomerID = x.CustomerId,
+                    CompanyName = x.CompanyName,
+                    Address = x.Address,
+                    City = x.City,
+                });
 
             return result;
         }
 
     }
+
+    public interface ICustomersService
+    {
+        /// <summary>
+        /// 取得 (多筆)顧客資料
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<CustomersDTO> GetList();
+
+        /// <summary>
+        /// 取得 (單筆)顧客資料
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        CustomersDTO GetData(string customerId);
+    }
+
 }

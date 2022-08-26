@@ -17,7 +17,7 @@ namespace DTO
         }
 
         /// <summary>
-        /// 編客ID
+        /// 顧客ID
         /// </summary>
         public string CustomerID { get; set; }
 

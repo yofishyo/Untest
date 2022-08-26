@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DTO
 {
     /// <summary>
-    /// 訂單
+    /// 訂單主檔
     /// </summary>
     public class OrdersDTO
     {
@@ -36,6 +36,9 @@ namespace DTO
         /// </summary>
         public string ShipCity { get; set; }
 
-        //public  CustomersDTO Customers { get; set; }
+        /// <summary>
+        /// 訂單明細
+        /// </summary>
+        public virtual ICollection<OrderDetailDTO> OrderDetails { get; set; }
     }
 }

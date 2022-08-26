@@ -34,8 +34,11 @@ namespace Untest.API
         {
             //ª`¥UDB
             services.AddTransient<NorthwindContext>();
-            //ª`¥Uservice
+            #region ª`¥Uservice
             services.AddSingleton<ICustomersService, CustomersService>();
+            services.AddSingleton<IOrdersService, OrdersService>();
+            services.AddSingleton<IOrderDetailService, OrderDetailService>();
+            #endregion
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
