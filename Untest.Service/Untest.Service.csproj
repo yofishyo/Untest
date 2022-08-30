@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj" />
     <ProjectReference Include="..\Untest.EntityCore\Untest.EntityCore.csproj" />
+    <ProjectReference Include="..\Untest.Utility\Untest.Utility.csproj" />
   </ItemGroup>
 
 </Project>

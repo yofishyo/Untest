@@ -5,3 +5,5 @@
 /Untest.Service/bin
 /Untest.Service/obj
 /.vs
+/Untest.Utility/bin/Debug/net5.0
+/Untest.Utility/obj
