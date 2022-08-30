@@ -12,16 +12,16 @@ namespace Untest.Service
 {
     public class CustomersService : ICustomersService
     {
-        private readonly NorthwindContext _dB;
+        private readonly NorthwindContext _db;
 
-        public CustomersService(NorthwindContext dB)
+        public CustomersService(NorthwindContext db)
         {
-            _dB = dB;
+            _db = db;
         }
 
-        public CustomersDTO GetData(string customerId)
+        public CustomersDTO Get(string customerId)
         {
-            var result = _dB.Customers.Where(x => x.CustomerId == customerId)
+            var result = _db.Customers.Where(x => x.CustomerId == customerId)
                                 .Select(x => new CustomersDTO
                                 {
                                     CustomerID = x.CustomerId,
@@ -33,14 +33,14 @@ namespace Untest.Service
                                         OrderID = o.OrderId,
                                         OrderDate = o.OrderDate,
                                     }).Take(3).ToList(),
-                                }).FirstOrDefault();
+                                }).FirstOrDefault();           
 
             return result;
         }
 
-        public IEnumerable<CustomersDTO> GetList()
+        public IEnumerable<CustomersDTO> GetCustomers()
         {
-            var result = _dB.Customers
+            var result = _db.Customers
                 .Select(x => new CustomersDTO
                 {
                     CustomerID = x.CustomerId,
@@ -60,14 +60,14 @@ namespace Untest.Service
         /// 取得 (多筆)顧客資料
         /// </summary>
         /// <returns></returns>
-        IEnumerable<CustomersDTO> GetList();
+        IEnumerable<CustomersDTO> GetCustomers();
 
         /// <summary>
         /// 取得 (單筆)顧客資料
         /// </summary>
         /// <param name="customerId"></param>
         /// <returns></returns>
-        CustomersDTO GetData(string customerId);
+        CustomersDTO Get(string customerId);
     }
 
 }

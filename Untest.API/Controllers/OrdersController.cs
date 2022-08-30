@@ -6,12 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 using Untest.Service;
 
 namespace Untest.API.Controllers
 {
+    /// <summary>
+    /// 訂單資料
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
@@ -28,11 +32,17 @@ namespace Untest.API.Controllers
         /// </summary>
         /// <param name="id">訂單ID</param>
         /// <returns></returns>
+        /// <response code="404">找不到該筆資料</response>    
         [HttpPost]
-        [Route("GetData")]
-        public OrdersDTO GetData(int id)
+        [Route("Get")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(OrdersDTO), (int)HttpStatusCode.OK)]
+        public OrdersDTO Get(int id)
         {
-            return _ordersService.GetData(id);
+            var result = _ordersService.Get(id);
+            if (result is null) Response.StatusCode = (int)HttpStatusCode.NotFound;
+
+            return result;
         }
 
     }

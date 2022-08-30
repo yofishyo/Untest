@@ -20,7 +20,7 @@ namespace Untest.Service
         }
 
         
-        public  ICollection<OrderDetailDTO> GetList(int orderId)
+        public  ICollection<OrderDetailDTO> GetOrders(int orderId)
         {
             var result = _db.OrderDetails.Where(x => x.OrderId == orderId)
                                 .Select(x => new OrderDetailDTO
@@ -42,6 +42,6 @@ namespace Untest.Service
         /// </summary>
         /// <param name="orderId"></param>
         /// <returns></returns>
-        ICollection<OrderDetailDTO> GetList(int orderId);
+        ICollection<OrderDetailDTO> GetOrders(int orderId);
     }
 }

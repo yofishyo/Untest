@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 using Untest.Service;
@@ -31,10 +32,12 @@ namespace Untest.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("GetList")]
-        public List<CustomersDTO> GetList()
+        [Route("GetCustomers")]
+        [Produces("application/json")]
+        public ActionResult<List<CustomersDTO>> GetCustomers()
         {
-            return _customersService.GetList().ToList();
+            var list = _customersService.GetCustomers().ToList();
+            return Ok(list);
         }
 
         /// <summary>
@@ -42,11 +45,16 @@ namespace Untest.API.Controllers
         /// </summary>
         /// <param name="id">顧客ID</param>
         /// <returns></returns>
+        /// <response code="404">找不到該筆資料</response>   
         [HttpPost]
-        [Route("GetData")]
-        public CustomersDTO GetData(string id)
+        [Route("Get")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(CustomersDTO), (int)HttpStatusCode.OK)]
+        public ActionResult <CustomersDTO>  Get(string id)
         {
-            return _customersService.GetData(id);
+            var result = _customersService.Get(id);
+            if (result is null) Response.StatusCode = (int)HttpStatusCode.NotFound;
+            return result;
         }        
     }
 }

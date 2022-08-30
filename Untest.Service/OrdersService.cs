@@ -21,7 +21,7 @@ namespace Untest.Service
             _orderDetailService = orderDetailService;
         }
 
-        public OrdersDTO GetData(int orderId)
+        public OrdersDTO Get(int orderId)
         {
             var result = _db.Orders.Where(x => x.OrderId == orderId)
                      .Select(x => new OrdersDTO
@@ -30,7 +30,7 @@ namespace Untest.Service
                          OrderDate=x.OrderDate,
                          ShippedDate=x.ShippedDate,
                          ShipName=x.ShipName,
-                         OrderDetails=_orderDetailService.GetList(x.OrderId)
+                         OrderDetails=_orderDetailService.GetOrders(x.OrderId)
                      }).FirstOrDefault();
 
             return result;
@@ -40,6 +40,6 @@ namespace Untest.Service
 
     public interface IOrdersService
     {
-        OrdersDTO GetData(int orderId);
+        OrdersDTO Get(int orderId);
     }
 }
