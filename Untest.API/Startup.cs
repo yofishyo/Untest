@@ -32,8 +32,9 @@ namespace Untest.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //注冊DB
+            #region 注冊DB
             services.AddTransient<NorthwindContext>();
+            #endregion
             #region 注冊service
             services.AddSingleton<ICustomersService, CustomersService>();
             services.AddSingleton<IOrdersService, OrdersService>();
@@ -46,7 +47,7 @@ namespace Untest.API
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "北風資料庫API",
-                    Description="環境：.net 5 ，EF core使用DB first建立Model",
+                    Description = "環境：.net 5 ，EF core使用DB first建立Model",
                     Version = "v1"
                 });
                 // 加入xml檔案到swagger

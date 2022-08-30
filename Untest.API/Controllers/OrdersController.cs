@@ -37,7 +37,7 @@ namespace Untest.API.Controllers
         [Route("Get")]
         [Produces("application/json")]
         [ProducesResponseType(typeof(OrdersDTO), (int)HttpStatusCode.OK)]
-        public OrdersDTO Get(int id)
+        public ActionResult<OrdersDTO> Get(int id)
         {
             var result = _ordersService.Get(id);
             if (result is null) Response.StatusCode = (int)HttpStatusCode.NotFound;
