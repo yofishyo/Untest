@@ -7,3 +7,5 @@
 /.vs
 /Untest.Utility/bin/Debug/net5.0
 /Untest.Utility/obj
+/Untest.UtilityTests/bin/Debug/.netcoreapp,version=v5.0
+/Untest.UtilityTests/obj

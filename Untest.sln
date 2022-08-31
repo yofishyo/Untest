@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Untest.EntityCore", "Untest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untest.Utility", "Untest.Utility\Untest.Utility.csproj", "{397FF9FC-64BB-4819-8C4D-84881933F853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untest.UtilityTests", "Untest.UtilityTests\Untest.UtilityTests.csproj", "{8DF1A87A-D751-4837-830A-A86E478CA237}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{397FF9FC-64BB-4819-8C4D-84881933F853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{397FF9FC-64BB-4819-8C4D-84881933F853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{397FF9FC-64BB-4819-8C4D-84881933F853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF1A87A-D751-4837-830A-A86E478CA237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF1A87A-D751-4837-830A-A86E478CA237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF1A87A-D751-4837-830A-A86E478CA237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF1A87A-D751-4837-830A-A86E478CA237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
