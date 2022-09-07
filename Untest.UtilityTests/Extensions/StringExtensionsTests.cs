@@ -29,6 +29,36 @@ namespace Untest.Utility.Extensions.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [Test(Description = "Test_ToCurrencyString_輸入字串一二三_預期取得字串0")]
+        public void Test_ToCurrencyString_輸入字串一二三_預期取得字串0()
+        {
+            //arrange--------------------------------------------           
+            var stringExtensions = new StringExtensions();
+            var sut = "一二三";       //待測物
+            var expected = "0";  //預期的結果
+
+            //act-------------------------------------------------
+            var actual = stringExtensions.ToCurrencyString(sut);
+
+            //assert--------------------------------------------
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test(Description = "Test_ToCurrencyString_輸入字串123_預期取得字串123")]
+        public void Test_ToCurrencyString_輸入字串123_預期取得字串123()
+        {
+            //arrange--------------------------------------------           
+            var stringExtensions = new StringExtensions();
+            var sut = "123";       //待測物
+            var expected = "123";  //預期的結果
+
+            //act-------------------------------------------------
+            var actual = stringExtensions.ToCurrencyString(sut);
+
+            //assert--------------------------------------------
+            Assert.AreEqual(expected, actual);
+        }
+
         #region 同個method，傳入多個sut
         //[Test(Description = "Test_ToCurrencyString_輸入數字小數點後第2位_預期取得字串型別的整數")]
         //public void Test_ToCurrencyString_輸入數字小數點後第2位_預期取得字串型別的整數()
