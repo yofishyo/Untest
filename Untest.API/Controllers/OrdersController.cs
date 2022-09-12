@@ -45,5 +45,20 @@ namespace Untest.API.Controllers
             return result;
         }
 
+        /// <summary>
+        /// 取得 單筆訂單的總金額
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("GetOrderTotal")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(decimal), (int)HttpStatusCode.OK)]
+        public ActionResult<decimal> GetOrderTotal(int id)
+        {
+            var result = _ordersService.GetOrderTotal(id);
+            return result;
+        }
+
     }
 }

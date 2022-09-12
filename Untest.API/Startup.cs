@@ -40,6 +40,7 @@ namespace Untest.API
             services.AddSingleton<IOrdersService, OrdersService>();
             services.AddSingleton<IOrderDetailService, OrderDetailService>();
             services.AddSingleton<ICategoryService, CategoryService>();
+            services.AddSingleton<ICalculateService, CalculateService>();
             #endregion
 
             services.AddControllers();
