@@ -38,6 +38,9 @@ namespace Untest.Service.Tests
             //模擬回傳值
             _stubOrderDetailService.GetOrders(orderId).Returns(x => { return fakeDetails; });
             _stubCalculateService.CalSutTotal(10, 10, 0).Returns(100);
+
+            //使用參數匹配器 Arg.Any<Type>，忽略傳入的參數內容
+            //_stubCalculateService.CalSutTotal(Arg.Any<decimal>(), Arg.Any<int>(), Arg.Any<decimal>()).Returns(100);
             #endregion
 
             //verify
@@ -52,5 +55,6 @@ namespace Untest.Service.Tests
             //assert--------------------------------------------
             Assert.AreEqual(expected, actual);
         }
+
     }
 }
