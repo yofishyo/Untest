@@ -19,13 +19,18 @@ namespace Untest.Service
             _db = db;
         }
 
-        
-        public  ICollection<OrderDetailDTO> GetOrders(int orderId)
+        /// <summary>
+        /// 取得 訂單明細
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
+        public IEnumerable<OrderDetailDTO> GetOrders(int orderId)
         {
             var result = _db.OrderDetails.Where(x => x.OrderId == orderId)
                                 .Select(x => new OrderDetailDTO
                                 {
                                     OrderId = x.OrderId,
+                                    ProductId=x.ProductId,
                                     UnitPrice = x.UnitPrice,
                                     Quantity = x.Quantity,
                                     Discount = x.Discount,
@@ -42,6 +47,6 @@ namespace Untest.Service
         /// </summary>
         /// <param name="orderId"></param>
         /// <returns></returns>
-        ICollection<OrderDetailDTO> GetOrders(int orderId);
+        IEnumerable<OrderDetailDTO> GetOrders(int orderId);
     }
 }

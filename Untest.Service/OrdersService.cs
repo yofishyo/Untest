@@ -23,6 +23,11 @@ namespace Untest.Service
             _calculateService = calculateService;
         }
 
+        /// <summary>
+        ///  取得 (單筆)訂單資料
+        /// </summary>
+        /// <param name="orderId">訂單id</param>
+        /// <returns></returns>
         public OrdersDTO Get(int orderId)
         {
             var result = _db.Orders.Where(x => x.OrderId == orderId)
@@ -32,15 +37,20 @@ namespace Untest.Service
                          OrderDate=x.OrderDate,
                          ShippedDate=x.ShippedDate,
                          ShipName=x.ShipName,
-                         OrderDetails=_orderDetailService.GetOrders(x.OrderId)
+                         OrderDetails=_orderDetailService.GetOrders(x.OrderId).ToArray()
                      }).FirstOrDefault();
 
             return result;
         }
 
+        /// <summary>
+        /// 取得 單筆訂單的總金額
+        /// </summary>
+        /// <param name="orderId">訂單id</param>
+        /// <returns></returns>
         public decimal GetOrderTotal(int orderId)
         {
-            var details = _db.OrderDetails.Where(x => x.OrderId == orderId).ToArray();
+            var details = _orderDetailService.GetOrders(orderId).ToArray();
             if (!details.Any()) return 0;
 
             var subTotals = new List<decimal>();
@@ -56,12 +66,17 @@ namespace Untest.Service
 
     public interface IOrdersService
     {
+        /// <summary>
+        ///  取得 (單筆)訂單資料
+        /// </summary>
+        /// <param name="orderId">訂單id</param>
+        /// <returns></returns>
         OrdersDTO Get(int orderId);
 
         /// <summary>
         /// 取得 單筆訂單的總金額
         /// </summary>
-        /// <param name="orderId"></param>
+        /// <param name="orderId">訂單id</param>
         /// <returns></returns>
         decimal GetOrderTotal(int orderId);
 
