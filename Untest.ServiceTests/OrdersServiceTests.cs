@@ -56,5 +56,31 @@ namespace Untest.Service.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [Test(Description = "GetOrderTotalTest_查無訂單id_取得0")]
+        public void GetOrderTotalTest_查無訂單id_取得0()
+        {
+            //arrange--------------------------------------------   
+            var orderId = 1;
+
+            #region 隔離相依性物件
+            //模擬回傳值
+            _stubOrderDetailService.GetOrders(orderId).Returns(x => { return new List<OrderDetailDTO>(); });
+            //使用參數匹配器 Arg.Any<Type>，忽略傳入的參數內容
+            _stubCalculateService.CalSutTotal(Arg.Any<decimal>(), Arg.Any<int>(), Arg.Any<decimal>()).Returns(100);
+            #endregion
+
+            //verify
+            var expected = 0;
+
+            //建立待測物sut
+            var sut = new OrdersService(null, _stubOrderDetailService, _stubCalculateService);
+
+            //act-------------------------------------------------
+            var actual = sut.GetOrderTotal(orderId);
+
+            //assert--------------------------------------------
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
