@@ -15,8 +15,8 @@ namespace Untest.Utility.Extensions.Tests
         public void Test_ToCurrencyString_輸入數字小數點後第1位_預期取得字串型別的整數()
         {
             //arrange--------------------------------------------
-            #region 直接 new 出實體，未隔離
-            //注：此為public class，not static class，所以未使用DI隔離class
+            #region 此為public class，直接 new 出實體
+            //注：此為public class，not static class，所以未使用interface隔離class
             #endregion
             var stringExtensions = new StringExtensions();
             var sut = 123.4;       //待測物

@@ -19,9 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_Data Access", "03_Data A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Untest.EntityCore", "Untest.EntityCore\Untest.EntityCore.csproj", "{124E1FA7-2EF1-4DFE-8C9E-1BF5C2F9C172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untest.Utility", "Untest.Utility\Untest.Utility.csproj", "{397FF9FC-64BB-4819-8C4D-84881933F853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Untest.Utility", "Untest.Utility\Untest.Utility.csproj", "{397FF9FC-64BB-4819-8C4D-84881933F853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untest.UtilityTests", "Untest.UtilityTests\Untest.UtilityTests.csproj", "{8DF1A87A-D751-4837-830A-A86E478CA237}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Untest.UtilityTests", "Untest.UtilityTests\Untest.UtilityTests.csproj", "{8DF1A87A-D751-4837-830A-A86E478CA237}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untest.ServiceTests", "Untest.ServiceTests\Untest.ServiceTests.csproj", "{6CC74DCC-D70E-4324-9BC1-18AFBEC2386D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{8DF1A87A-D751-4837-830A-A86E478CA237}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DF1A87A-D751-4837-830A-A86E478CA237}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DF1A87A-D751-4837-830A-A86E478CA237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC74DCC-D70E-4324-9BC1-18AFBEC2386D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC74DCC-D70E-4324-9BC1-18AFBEC2386D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC74DCC-D70E-4324-9BC1-18AFBEC2386D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC74DCC-D70E-4324-9BC1-18AFBEC2386D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

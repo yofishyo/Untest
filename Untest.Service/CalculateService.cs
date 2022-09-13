@@ -16,7 +16,12 @@ namespace Untest.Service
                 result = result * (1 - discount);
             }
 
-            return Math.Round(result, 2, MidpointRounding.AwayFromZero);
+            return result;
+        }
+
+        public decimal GetRound(decimal value, int point)
+        {
+            return Math.Round(value, point, MidpointRounding.AwayFromZero);
         }
     }
 
@@ -31,5 +36,14 @@ namespace Untest.Service
         /// <param name="discount">折扣</param>
         /// <returns></returns>
         decimal CalSutTotal(decimal unitPrice, int qty, decimal discount);
+
+        /// <summary>
+        /// 四捨五入(取到 小數點第N位)
+        /// </summary>
+        /// <param name="value">傳入值</param>
+        /// <param name="point">小數點位數(N)</param>
+        /// <returns></returns>
+        decimal GetRound(decimal value, int point);
+      
     }
 }
