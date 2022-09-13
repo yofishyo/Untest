@@ -2,6 +2,7 @@
 *.rsuser
 *.suo
 *.user
+*.csproj.user
 *.userosscache
 *.sln.docstates
 
@@ -83,3 +84,4 @@ nunit-*.xml
 /Untest.ServiceTests/bin
 /Untest.ServiceTests/obj
 /Untest.EntityCore/obj
+/Untest.ServiceTests/*.user
