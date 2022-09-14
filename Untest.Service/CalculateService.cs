@@ -36,6 +36,13 @@ namespace Untest.Service
         {
             return Math.Round(value, point, MidpointRounding.AwayFromZero);
         }
+
+
+        public int NumberAdd(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
     }
 
 
@@ -57,6 +64,14 @@ namespace Untest.Service
         /// <param name="point">小數點位數(N)</param>
         /// <returns></returns>
         decimal GetRound(decimal value, int point);
-      
+
+        /// <summary>
+        /// 兩數相加
+        /// </summary>
+        /// <param name="num1">數值1</param>
+        /// <param name="num2">數值2</param>
+        /// <returns></returns>
+        int NumberAdd(int num1, int num2);
+
     }
 }
