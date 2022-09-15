@@ -37,12 +37,22 @@ namespace Untest.Service
             return Math.Round(value, point, MidpointRounding.AwayFromZero);
         }
 
-
         public int NumberAdd(int num1, int num2)
         {
             return num1 + num2;
         }
 
+        /// <summary>
+        /// 是否能整除 (num1/num2)
+        /// </summary>
+        /// <param name="num1">除數</param>
+        /// <param name="num2">被除數</param>
+        /// <returns></returns>
+        public bool IsDivided(int n1, int n2)
+        {
+            var result = (n1 % n2) == 0;
+            return result;
+        }
     }
 
 
@@ -73,5 +83,12 @@ namespace Untest.Service
         /// <returns></returns>
         int NumberAdd(int num1, int num2);
 
+        /// <summary>
+        /// 是否能整除 (num1/num2)
+        /// </summary>
+        /// <param name="num1">除數</param>
+        /// <param name="num2">被除數</param>
+        /// <returns></returns>
+        bool IsDivided(int num1, int num2);
     }
 }

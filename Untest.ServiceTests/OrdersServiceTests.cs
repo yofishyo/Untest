@@ -79,7 +79,7 @@ namespace Untest.Service.Tests
             var actual = sut.GetOrderTotal(orderId);
 
             //assert--------------------------------------------
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual,"失敗，因為找不到訂單編號");
         }
 
     }

@@ -42,15 +42,24 @@ namespace Untest.Service.Tests
         public void NumberAddTest_輸入2數_取得相加的結果()
         {
             var actual = new CalculateService().NumberAdd(1, 2);
-            Assert.AreEqual(3,actual, "測試失敗，數字不相等");
+            Assert.AreEqual(3, actual, "測試失敗，數字不相等");
         }
 
         [Test()]
         public void NumberAddTest_使用FluentAssertions寫法輸入2數_取得相加的結果()
         {
             var actual = new CalculateService().NumberAdd(1, 2);
-            actual.Should().Be(3, because: "1+2=3");
+            actual.Should().Be(3, because: "測試失敗，1+2=3");
         }
         #endregion
+
+        [TestCase(100, 5)]
+        [TestCase(100, 10)]
+        public void IsDividedTest_輸入2數_預期能夠整除(int inputNum1, int inputNum2)
+        {
+            //arrange--------------------------------------------
+            var actual = new CalculateService().IsDivided(inputNum1, inputNum2);
+            actual.Should().BeTrue("無法整除");
+        }
     }
 }
