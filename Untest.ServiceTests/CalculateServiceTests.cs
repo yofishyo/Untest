@@ -57,8 +57,9 @@ namespace Untest.Service.Tests
         [TestCase(100, 10)]
         public void IsDividedTest_輸入2數_預期能夠整除(int inputNum1, int inputNum2)
         {
-            //arrange--------------------------------------------
+            //arrange、act --------------------------------------------
             var actual = new CalculateService().IsDivided(inputNum1, inputNum2);
+            //assert--------------------------------------------
             actual.Should().BeTrue("無法整除");
         }
     }
