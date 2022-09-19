@@ -85,3 +85,5 @@ nunit-*.xml
 /Untest.ServiceTests/obj
 /Untest.EntityCore/obj
 /Untest.ServiceTests/*.user
+*.dbmdl
+*.jfm
