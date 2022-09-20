@@ -5,7 +5,7 @@
 - 採用.net5開發
 
 ### 01_Presentation/Untest.API
-- .net Core API
+- .net Core API，DI注入service
 - 使用Swagger 建立API文件
 
 ### 03_Data Access/Untest.EntityCore
