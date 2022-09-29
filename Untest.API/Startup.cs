@@ -36,11 +36,11 @@ namespace Untest.API
             services.AddTransient<NorthwindContext>();
             #endregion
             #region ª`¥Uservice
-            services.AddSingleton<ICustomersService, CustomersService>();
-            services.AddSingleton<IOrdersService, OrdersService>();
-            services.AddSingleton<IOrderDetailService, OrderDetailService>();
-            services.AddSingleton<ICategoryService, CategoryService>();
-            services.AddSingleton<ICalculateService, CalculateService>();
+            services.AddScoped<ICustomersService, CustomersService>();
+            services.AddScoped<IOrdersService, OrdersService>();
+            services.AddScoped<IOrderDetailService, OrderDetailService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICalculateService, CalculateService>();
             #endregion
 
             services.AddControllers();
