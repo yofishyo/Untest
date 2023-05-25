@@ -8,7 +8,7 @@ namespace Untest.Service.Tests
     public class CalculateServiceTests
     {
         [Test()]
-        public void Test_GetRound_輸入數字_四捨五入預期取得小數點第N位()
+        public void GetRoundTest_輸入數字_四捨五入預期取得小數點第2位()
         {
             //arrange--------------------------------------------   
             var expected = 123.46;  //預期的結果
@@ -61,6 +61,18 @@ namespace Untest.Service.Tests
             var actual = new CalculateService().IsDivided(inputNum1, inputNum2);
             //assert--------------------------------------------
             actual.Should().BeTrue("無法整除");
+        }
+
+        [Test()]
+        public void NumberCutTest_輸入2數相減_預期等於0()
+        { //arrange--------------------------------------------   
+            var expected = 0;  //預期的結果
+
+            //act-------------------------------------------------
+            var actual = new CalculateService().NumberCut(5,5);
+
+            //assert--------------------------------------------
+            Assert.AreEqual(expected, actual);
         }
     }
 }

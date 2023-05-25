@@ -53,6 +53,11 @@ namespace Untest.Service
             var result = (n1 % n2) == 0;
             return result;
         }
+
+        public int NumberCut(int num1, int num2)
+        {
+            return num1 - num2;            
+        }
     }
 
 
@@ -90,5 +95,7 @@ namespace Untest.Service
         /// <param name="num2">被除數</param>
         /// <returns></returns>
         bool IsDivided(int num1, int num2);
+
+        int NumberCut(int num1,int num2);
     }
 }
